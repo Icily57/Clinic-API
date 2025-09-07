@@ -11,6 +11,9 @@ importers:
       '@hono/node-server':
         specifier: ^1.5.0
         version: 1.19.1(hono@4.9.6)
+      '@neondatabase/serverless':
+        specifier: ^1.0.1
+        version: 1.0.1
       bcryptjs:
         specifier: ^2.4.3
         version: 2.4.3
@@ -19,7 +22,7 @@ importers:
         version: 16.6.1
       drizzle-orm:
         specifier: ^0.30.10
-        version: 0.30.10(pg@8.16.3)
+        version: 0.30.10(@neondatabase/serverless@1.0.1)(@types/pg@8.15.5)(pg@8.16.3)
       hono:
         specifier: ^4.6.7
         version: 4.9.6
@@ -500,6 +503,10 @@ packages:
       hono: '>=3.9.0'
       zod: ^3.19.1
 
+  '@neondatabase/serverless@1.0.1':
+    resolution: {integrity: sha512-O6yC5TT0jbw86VZVkmnzCZJB0hfxBl0JJz6f+3KHoZabjb/X08r9eFA+vuY06z1/qaovykvdkrXYq3SPUuvogA==}
+    engines: {node: '>=19.0.0'}
+
   '@types/bcryptjs@2.4.6':
     resolution: {integrity: sha512-9xlo6R2qDs5uixm0bcIqCeMCE6HiQsIyel9KQySStiyqNl2tnj2mP3DX1Nf56MD6KMenNNlBBsy3LJ7gUEQPXQ==}
 
@@ -511,6 +518,12 @@ packages:
 
   '@types/node@20.19.13':
     resolution: {integrity: sha512-yCAeZl7a0DxgNVteXFHt9+uyFbqXGy/ShC4BlcHkoE0AfGXYv/BUiplV72DjMYXHDBXFjhvr6DD1NiRVfB4j8g==}
+
+  '@types/node@22.18.1':
+    resolution: {integrity: sha512-rzSDyhn4cYznVG+PCzGe1lwuMYJrcBS1fc3JqSa2PvtABwWo+dZ1ij5OVok3tqfpEBCBoaR4d7upFJk73HRJDw==}
+
+  '@types/pg@8.15.5':
+    resolution: {integrity: sha512-LF7lF6zWEKxuT3/OR8wAZGzkg4ENGXFNyiV/JeOt9z5B+0ZVwbql9McqX5c/WStFq1GaGso7H1AzP/qSzmlCKQ==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -1158,6 +1171,11 @@ snapshots:
       hono: 4.9.6
       zod: 3.25.76
 
+  '@neondatabase/serverless@1.0.1':
+    dependencies:
+      '@types/node': 22.18.1
+      '@types/pg': 8.15.5
+
   '@types/bcryptjs@2.4.6': {}
 
   '@types/jsonwebtoken@9.0.10':
@@ -1170,6 +1188,16 @@ snapshots:
   '@types/node@20.19.13':
     dependencies:
       undici-types: 6.21.0
+
+  '@types/node@22.18.1':
+    dependencies:
+      undici-types: 6.21.0
+
+  '@types/pg@8.15.5':
+    dependencies:
+      '@types/node': 20.19.13
+      pg-protocol: 1.10.3
+      pg-types: 2.2.0
 
   balanced-match@1.0.2: {}
 
@@ -1242,8 +1270,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.30.10(pg@8.16.3):
+  drizzle-orm@0.30.10(@neondatabase/serverless@1.0.1)(@types/pg@8.15.5)(pg@8.16.3):
     optionalDependencies:
+      '@neondatabase/serverless': 1.0.1
+      '@types/pg': 8.15.5
       pg: 8.16.3
 
   ecdsa-sig-formatter@1.0.11:
