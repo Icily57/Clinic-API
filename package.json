@@ -1,0 +1,31 @@
+{
+  "name": "clinic-backend",
+  "version": "1.0.0",
+  "description": "Clinic management system backend using Hono, Drizzle ORM, JWT, and Nodemailer",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "migrate": "drizzle-kit migrate",
+    "generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.5.0",
+    "hono": "^4.6.7",
+    "drizzle-orm": "^0.30.10",
+    "pg": "^8.12.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.11",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.12.12",
+    "drizzle-kit": "^0.20.14",
+    "tsx": "^4.16.2",
+    "typescript": "^5.4.5"
+  }
+}
