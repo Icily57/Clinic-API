@@ -1,10 +1,11 @@
-
 import { drizzle } from "drizzle-orm/neon-http";
 import { neon } from "@neondatabase/serverless";
-import "dotenv/config";
-import * as schema from "./schema"
- 
+import { config } from "dotenv";
+import * as schema from "./schema";
+
+config({ path: ".env" });
+
 const client = neon(process.env.DATABASE_URL as string);
- 
-const db = drizzle(client, {schema, logger:true});
+export const db = drizzle(client, { schema, logger: true }); // create a drizzle instance
+
 export default db;
